@@ -1,0 +1,34 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @details.Set %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @details.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">Set</div>
+            <div class="itemValue"><%= @details.Set %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Rep</div>
+            <div class="itemValue"><%= @details.Rep %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Weight</div>
+            <div class="itemValue"><%= @details.Weight %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,34 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @userprofile.FirstName %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @userprofile.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">FirstName</div>
+            <div class="itemValue"><%= @userprofile.FirstName %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">LastName</div>
+            <div class="itemValue"><%= @userprofile.LastName %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Image</div>
+            <div class="itemValue"><img src='<%= @userprofile.Image %>'/></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,45 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @session_attended.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @session_attended.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="session_attended[SessionID]" class="fieldLabel">Sessionid</label>
+            <input type="text" id="session_attended[SessionID]" name="session_attended[SessionID]" <%= placeholder("Sessionid") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session_attended[SessionStartDate]" class="fieldLabel">Sessionstartdate</label>
+            <input type="text" id="session_attended[SessionStartDate]" name="session_attended[SessionStartDate]" <%= placeholder("Sessionstartdate") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session_attended[SessionEndDate]" class="fieldLabel">Sessionenddate</label>
+            <input type="text" id="session_attended[SessionEndDate]" name="session_attended[SessionEndDate]" <%= placeholder("Sessionenddate") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session_attended[SessionStartTime]" class="fieldLabel">Sessionstarttime</label>
+            <input type="text" id="session_attended[SessionStartTime]" name="session_attended[SessionStartTime]" <%= placeholder("Sessionstarttime") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session_attended[SessionPaid]" class="fieldLabel">Sessionpaid</label>
+            <input type="text" id="session_attended[SessionPaid]" name="session_attended[SessionPaid]" <%= placeholder("Sessionpaid") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

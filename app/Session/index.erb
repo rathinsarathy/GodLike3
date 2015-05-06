@@ -1,0 +1,28 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>Available Sessions</h1>
+    <a href="<%= Rho::Application.startURI %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Home
+    </a>
+      <a href="<%= url_for :model => :SessionAttended,:action => :index, :query => {:user_pk => 4} %>" class="ui-btn-right" data-icon="plus" data-direction="reverse">
+          AttendedSession
+        </a>
+	</div>
+
+  <div data-role="content">
+  <h3>Available Sessions</h3> 
+    <ul data-role="listview">
+      <% @sessions.each do |session| %>
+      
+          <li>
+           Session ID <a href="<%= url_for :model => :Session, :action => :show, :id => session.object %>">
+              <%= session.SessionID %>
+            </a>
+          </li>
+      
+      <% end %>
+    </ul>
+  </div>
+
+</div>

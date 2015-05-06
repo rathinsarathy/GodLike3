@@ -1,0 +1,44 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @session.SessionID %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+      <a href="<%= url_for :model => :ExerciseDetails,:action => :index, :query => {:user_pk => 4} %>" class="ui-btn-right" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+          Exercise Details
+        </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">SessionID</div>
+            <div class="itemValue"><%= @session.SessionID %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">SessionStartDate</div>
+            <div class="itemValue"><%= @session.SessionStartDate%></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">SessionEndDate</div>
+            <div class="itemValue"><%= @session.SessionEndDate %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">SessionStartTime</div>
+            <div class="itemValue"><%= @session.SessionStartTime %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">SessionPaid</div>
+            <div class="itemValue"><%= @session.SessionPaid %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

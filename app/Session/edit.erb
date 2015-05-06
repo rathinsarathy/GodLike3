@@ -1,0 +1,46 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @session.SessionID %></h1>
+    <a href="<%= url_for :action => :show, :id => @session.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @session.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @session.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="session[SessionID]" class="fieldLabel">Sessionid</label>
+            <input type="text" id="session[SessionID]" name="session[SessionID]" value="<%= @session.SessionID %>" <%= placeholder( "Sessionid" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session[SessionStartDate]" class="fieldLabel">Sessionstartdate</label>
+            <input type="text" id="session[SessionStartDate]" name="session[SessionStartDate]" value="<%= @session.SessionStartDate %>" <%= placeholder( "Sessionstartdate" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session[SessionEndDate]" class="fieldLabel">Sessionenddate</label>
+            <input type="text" id="session[SessionEndDate]" name="session[SessionEndDate]" value="<%= @session.SessionEndDate %>" <%= placeholder( "Sessionenddate" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session[SessionStartTime]" class="fieldLabel">Sessionstarttime</label>
+            <input type="text" id="session[SessionStartTime]" name="session[SessionStartTime]" value="<%= @session.SessionStartTime %>" <%= placeholder( "Sessionstarttime" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="session[SessionPaid]" class="fieldLabel">Sessionpaid</label>
+            <input type="text" id="session[SessionPaid]" name="session[SessionPaid]" value="<%= @session.SessionPaid %>" <%= placeholder( "Sessionpaid" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @details.Set %></h1>
+    <a href="<%= url_for :action => :show, :id => @details.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @details.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @details.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="details[Set]" class="fieldLabel">Set</label>
+            <input type="text" id="details[Set]" name="details[Set]" value="<%= @details.Set %>" <%= placeholder( "Set" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="details[Rep]" class="fieldLabel">Rep</label>
+            <input type="text" id="details[Rep]" name="details[Rep]" value="<%= @details.Rep %>" <%= placeholder( "Rep" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="details[Weight]" class="fieldLabel">Weight</label>
+            <input type="text" id="details[Weight]" name="details[Weight]" value="<%= @details.Weight %>" <%= placeholder( "Weight" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

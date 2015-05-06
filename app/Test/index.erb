@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+ 
+    <title></title>
+    <script type="text/javascript" src="api/rhoapi-modules.js"></script>
+    <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<script>
+    function play() {
+        $(document).ready(function () {
+try
+{
+  var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, 'public/test1.wmv');
+  Rho.Mediaplayer.startvideo(path)
+  alert(path)
+    
+
+}
+catch(e)
+  {
+    alert(e)
+  }
+
+            
+        })
+    }
+    
+      function playaudio() {
+          $(document).ready(function () {
+  try
+  {
+    var path = Rho.RhoFile.join(Rho.Application.appsBundleFolder, 'public/test1.wmv');
+    Rho.Mediaplayer.start(path)
+    alert(path)
+  }
+  catch(e)
+    {
+      alert(e)
+    }
+  
+              
+          })
+      }
+      
+ 
+</script>
+
+<button onclick="play()">Play Video</button>
+<button onclick="playaudio()">Play Audio</button>
+ <a href="public/sample.mp4">Play mp4 online video</a>
+</body>
+</html>

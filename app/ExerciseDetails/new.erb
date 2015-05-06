@@ -1,0 +1,50 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @exercisedetails.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @exercisedetails.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[Exc_Name]" class="fieldLabel">Exc name</label>
+            <input type="text" id="exercisedetails[Exc_Name]" name="exercisedetails[Exc_Name]" <%= placeholder("Exc name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[Exc_Id]" class="fieldLabel">Exc id</label>
+            <input type="text" id="exercisedetails[Exc_Id]" name="exercisedetails[Exc_Id]" <%= placeholder("Exc id") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[User_Id]" class="fieldLabel">User id</label>
+            <input type="text" id="exercisedetails[User_Id]" name="exercisedetails[User_Id]" <%= placeholder("User id") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[Exc_Img]" class="fieldLabel">Exc img</label>
+            <input type="text" id="exercisedetails[Exc_Img]" name="exercisedetails[Exc_Img]" <%= placeholder("Exc img") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[Exc_Date]" class="fieldLabel">Exc date</label>
+            <input type="text" id="exercisedetails[Exc_Date]" name="exercisedetails[Exc_Date]" <%= placeholder("Exc date") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exercisedetails[Acc_Id]" class="fieldLabel">Acc id</label>
+            <input type="text" id="exercisedetails[Acc_Id]" name="exercisedetails[Acc_Id]" <%= placeholder("Acc id") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>
